@@ -1,28 +1,34 @@
 # Lil Bugie
 
-Lil Bugie is a lightweight, single-header logging library designed to be easily integrated into your C/C++ projects. It provides a simple yet flexible interface for logging messages with different log levels, including support for custom log modes and timestamp formats.
+---
 
-## Features
+**Lil Bugie** is a lightweight, single-header logging library tailored for C/C++ projects. It offers a straightforward yet adaptable interface for logging messages across various levels, with support for custom log modes and timestamp formats, making it an ideal choice for developers seeking a minimalistic but effective logging solution.
 
-- Single-Header Library: All functionality is contained in a single header file (lil_bugie.h), making it easy to include in your projects.
-- Multiple Log Levels: Support for various log levels such as TRACE, DEBUG, INFO, WARN, ERROR, and SUCCESS.
-- Customizable Output: Customize log modes and timestamp formats.
-- Color-Coded Output: Log messages are color-coded for easy identification in the terminal.
-- Header-Only: No need for separate compilation; just include the header file.
+---
 
-## Usage
+## Key Features
+
+- **Single-Header Library**: All functionality is contained in `lil_bugie.h`, simplifying inclusion and integration.
+- **Multiple Log Levels**: Easily log messages at different levels—TRACE, DEBUG, INFO, WARN, ERROR, and SUCCESS.
+- **Customizable Logging**: Adjust log modes and timestamp formats to fit your needs.
+- **Colour-Coded Output**: Messages are colour-coded for quick identification in terminal environments.
+- **Header-Only Implementation**: No need for separate compilation; just include the header file in your project.
+
+---
+
+## Getting Started
 
 ### 1. Including the Library
 
-Simply drop the lil_bugie.h file into your project and include it in your source files:
+To start using Lil Bugie, simply add `lil_bugie.h` to your project directory and include it in your source files:
 
 ```c
 #include "lil_bugie.h"
 ```
 
-### 2. Basic Logging
+### 2. Logging Messages
 
-You can log messages using the provided macros for different log levels:
+Lil Bugie provides convenient macros for logging at different levels. Here's how to use them:
 
 ```c
 BUGIE_LOG_INFO(stdout, "Main", "This is an info message.");
@@ -30,10 +36,37 @@ BUGIE_LOG_WARN(stdout, "Main", "This is a warning message.");
 BUGIE_LOG_ERROR(stdout, "Main", "This is an error message.");
 ```
 
+### 3. Customizing Logs
+
+You can further customise your log outputs by specifying different modes or timestamp formats:
+
+```c
+BUGIE_LOG_DEBUG(stdout, "Init", "Debugging the initialization process.");
+```
+
+---
+
+## Example
+
+```c
+#include "lil_bugie.h"
+
+int main() {
+    BUGIE_LOG_TRACE(stdout, "Main", "Starting the program...");
+    BUGIE_LOG_SUCCESS(stdout, "Main", "Initialization successful.");
+    BUGIE_LOG_ERROR(stdout, "Main", "An error occurred.");
+    return 0;
+}
+```
+
+---
+
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE.txt) file for details.
+This project is licensed under the MIT License. See the [LICENSE](LICENSE.txt) file for more details.
+
+---
 
 ## Contributing
 
-Contributions are welcome! Feel free to open an issue or submit a pull request.
+We welcome contributions! If you encounter any issues or have ideas for improvements, please open an issue or submit a pull request.
